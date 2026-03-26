@@ -3,17 +3,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Container from '../components/Container.astro';
 import Section from '../components/Section.astro';
 import Button from '../components/Button.astro';
+import { getEntry } from 'astro:content';
+
+const siteEntry = await getEntry('site', 'settings');
+if (!siteEntry) throw new Error('Site settings missing.');
+const site = siteEntry.data;
 ---
 
 <BaseLayout
-  title="Hopla Physio – Physiotherapie Zürich (Platzhalter)"
-  description="Physiotherapie für Berufstätige, Sportverletzungen und Rehabilitation nach Operationen. Termin online oder telefonisch vereinbaren. (Platzhalter)"
+  title={`${site.practiceName} | Physiotherapie in ${site.locationShort}`}
+  description="Physiotherapie für Berufstätige, Sportverletzungen und Rehabilitation nach Operationen in Zürich."
 >
   <Section>
     <Container>
       <div class="grid items-start gap-10 lg:grid-cols-12 lg:gap-12">
         <div class="lg:col-span-7">
-          <p class="text-sm font-medium tracking-wide text-sage-800/80">
+          <p class="text-sm font-medium tracking-wide text-emerald-800/80">
             Physiotherapie · Zürich · Termine nach Vereinbarung
           </p>
           <h1 class="mt-3 text-balance font-display text-4xl leading-tight text-slate-950 sm:text-5xl">
@@ -21,7 +26,7 @@ import Button from '../components/Button.astro';
           </h1>
           <p class="mt-5 max-w-prose text-pretty text-lg leading-relaxed text-slate-700">
             Wir begleiten dich bei Sportverletzungen, nach Operationen und bei Beschwerden aus dem Arbeitsalltag.
-            Evidenzbasiert, respektvoll und mit einem klaren Plan. (Platzhalter)
+            Evidenzbasiert, respektvoll und mit einem klaren Plan.
           </p>
 
           <div class="mt-8 flex flex-wrap gap-3">
@@ -32,11 +37,11 @@ import Button from '../components/Button.astro';
           <dl class="mt-10 grid gap-6 sm:grid-cols-3">
             <div>
               <dt class="text-sm font-medium text-slate-700">Erfahrung</dt>
-              <dd class="mt-1 text-2xl font-semibold text-slate-950">12+ Jahre</dd>
+              <dd class="mt-1 text-2xl font-semibold text-slate-950">{site.yearsExperience}+ Jahre</dd>
             </div>
             <div>
               <dt class="text-sm font-medium text-slate-700">Zertifikate</dt>
-              <dd class="mt-1 text-2xl font-semibold text-slate-950">Physioswiss</dd>
+              <dd class="mt-1 text-2xl font-semibold text-slate-950">{site.certifications.length} Schwerpunkte</dd>
             </div>
             <div>
               <dt class="text-sm font-medium text-slate-700">Fokus</dt>
@@ -47,25 +52,26 @@ import Button from '../components/Button.astro';
 
         <div class="lg:col-span-5">
           <div class="rounded-2xl border border-slate-200 bg-white/60 p-5 shadow-sm backdrop-blur">
-            <div class="aspect-[4/3] overflow-hidden rounded-xl bg-slate-100">
-              <div class="flex h-full items-center justify-center text-sm text-slate-500">
-                Foto / Praxis-Impression (Platzhalter)
-              </div>
-            </div>
+            <img
+              src="/images/practice-interior.svg"
+              alt="Behandlungsraum der Praxis Lindenhof Physio"
+              loading="lazy"
+              class="aspect-[4/3] w-full rounded-xl border border-slate-200 object-cover"
+            />
             <div class="mt-5 space-y-3">
               <p class="text-sm font-medium text-slate-800">Das erwartet dich</p>
               <ul class="space-y-2 text-sm text-slate-700">
                 <li class="flex gap-2">
-                  <span class="mt-1 inline-block size-1.5 rounded-full bg-sage-700"></span>
-                  <span>Erstgespräch mit Zieldefinition & Befund (Platzhalter)</span>
+                  <span class="mt-1 inline-block size-1.5 rounded-full bg-emerald-700"></span>
+                  <span>Erstgespräch mit Zieldefinition und nachvollziehbarem Befund</span>
                 </li>
                 <li class="flex gap-2">
-                  <span class="mt-1 inline-block size-1.5 rounded-full bg-sage-700"></span>
-                  <span>Individueller Trainingsplan, alltagstauglich (Platzhalter)</span>
+                  <span class="mt-1 inline-block size-1.5 rounded-full bg-emerald-700"></span>
+                  <span>Individueller Trainingsplan, integriert in Arbeit und Alltag</span>
                 </li>
                 <li class="flex gap-2">
-                  <span class="mt-1 inline-block size-1.5 rounded-full bg-sage-700"></span>
-                  <span>Messbarer Fortschritt – Schritt für Schritt (Platzhalter)</span>
+                  <span class="mt-1 inline-block size-1.5 rounded-full bg-emerald-700"></span>
+                  <span>Messbarer Fortschritt mit regelmässiger Standortbestimmung</span>
                 </li>
               </ul>
             </div>
@@ -81,25 +87,25 @@ import Button from '../components/Button.astro';
         <div class="lg:col-span-4">
           <h2 class="font-display text-2xl text-slate-950">Leistungen</h2>
           <p class="mt-2 text-slate-700">
-            Drei Schwerpunkte für häufige Ziele – mit Raum für individuelle Bedürfnisse. (Platzhalter)
+            Drei Schwerpunkte für häufige Ziele - mit Raum für individuelle Bedürfnisse.
           </p>
         </div>
 
         <div class="grid gap-4 sm:grid-cols-2 lg:col-span-8 lg:grid-cols-3">
           <a href="/leistungen" class="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
             <h3 class="font-semibold text-slate-950">Sportphysio</h3>
-            <p class="mt-2 text-sm leading-relaxed text-slate-700">Zurück zu Training & Wettkampf – smart dosiert. (Platzhalter)</p>
-            <p class="mt-3 text-sm font-medium text-sage-800">Mehr erfahren</p>
+            <p class="mt-2 text-sm leading-relaxed text-slate-700">Zurück zu Training und Wettkampf mit gezielter Belastungssteuerung.</p>
+            <p class="mt-3 text-sm font-medium text-emerald-800">Mehr erfahren</p>
           </a>
           <a href="/leistungen" class="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
             <h3 class="font-semibold text-slate-950">Post-OP Reha</h3>
-            <p class="mt-2 text-sm leading-relaxed text-slate-700">Sicherer Aufbau nach Operation – mit klaren Etappen. (Platzhalter)</p>
-            <p class="mt-3 text-sm font-medium text-sage-800">Mehr erfahren</p>
+            <p class="mt-2 text-sm leading-relaxed text-slate-700">Sicherer Aufbau nach Operation mit klaren Etappen und enger Verlaufskontrolle.</p>
+            <p class="mt-3 text-sm font-medium text-emerald-800">Mehr erfahren</p>
           </a>
           <a href="/leistungen" class="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
             <h3 class="font-semibold text-slate-950">Arbeitsalltag</h3>
-            <p class="mt-2 text-sm leading-relaxed text-slate-700">Nacken, Rücken, Stress – nachhaltig beweglicher. (Platzhalter)</p>
-            <p class="mt-3 text-sm font-medium text-sage-800">Mehr erfahren</p>
+            <p class="mt-2 text-sm leading-relaxed text-slate-700">Nacken-, Rücken- und Gelenkbeschwerden nachhaltig verbessern.</p>
+            <p class="mt-3 text-sm font-medium text-emerald-800">Mehr erfahren</p>
           </a>
         </div>
       </div>
@@ -108,11 +114,11 @@ import Button from '../components/Button.astro';
 
   <Section>
     <Container>
-      <div class="grid gap-8 rounded-3xl border border-slate-200 bg-gradient-to-b from-white to-sand-50 p-7 shadow-sm sm:p-10 lg:grid-cols-12 lg:items-center">
+      <div class="grid gap-8 rounded-3xl border border-slate-200 bg-gradient-to-b from-white to-stone-50 p-7 shadow-sm sm:p-10 lg:grid-cols-12 lg:items-center">
         <div class="lg:col-span-7">
           <h2 class="font-display text-2xl text-slate-950 sm:text-3xl">Bereit für den nächsten Schritt?</h2>
           <p class="mt-3 text-slate-700">
-            Schreib uns kurz dein Anliegen – wir melden uns zeitnah mit Terminvorschlägen. (Platzhalter)
+            Schreib uns kurz dein Anliegen - wir melden uns innert eines Arbeitstags mit Terminvorschlägen.
           </p>
         </div>
         <div class="lg:col-span-5 lg:flex lg:justify-end">

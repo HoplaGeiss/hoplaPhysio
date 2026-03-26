@@ -1,14 +1,18 @@
 ---
 import Container from './Container.astro';
+import { getEntry } from 'astro:content';
+
+const siteEntry = await getEntry('site', 'settings');
+const site = siteEntry?.data;
 ---
 
-<footer class="border-t border-slate-200 bg-sand-50">
+<footer class="border-t border-slate-200 bg-stone-50">
   <Container class="py-10">
     <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
       <div>
-        <p class="font-display text-lg text-slate-950">Hopla Physio</p>
+        <p class="font-display text-lg text-slate-950">{site?.practiceName ?? 'Praxis Lindenhof Physio'}</p>
         <p class="mt-2 text-sm leading-relaxed text-slate-700">
-          Physiotherapie in der Region Zürich. (Platzhalter)
+          {site?.tagline ?? 'Physiotherapie in Zürich mit persönlicher Betreuung.'}
         </p>
       </div>
       <div>
@@ -22,20 +26,20 @@ import Container from './Container.astro';
       <div>
         <p class="text-sm font-semibold text-slate-950">Kontakt</p>
         <ul class="mt-3 space-y-2 text-sm text-slate-700">
-          <li>+41 44 000 00 00</li>
-          <li>praxis@example.ch</li>
-          <li>8000 Zürich</li>
+          <li>{site?.phone ?? '+41 44 521 84 30'}</li>
+          <li>{site?.email ?? 'kontakt@lindenhof-physio.ch'}</li>
+          <li>{site?.postalCodeCity ?? '8008 Zürich'}</li>
         </ul>
       </div>
       <div>
-        <p class="text-sm font-semibold text-slate-950">Hinweis</p>
+        <p class="text-sm font-semibold text-slate-950">Qualität</p>
         <p class="mt-3 text-sm leading-relaxed text-slate-700">
-          Platzhalter-Website. Rechtstexte (Impressum/Datenschutz) folgen. (Platzhalter)
+          Evidenzbasierte Behandlung, transparente Kommunikation und individuelle Therapieplanung.
         </p>
       </div>
     </div>
     <p class="mt-10 text-xs text-slate-600">
-      © {new Date().getFullYear()} Hopla Physio. Alle Rechte vorbehalten.
+      © {new Date().getFullYear()} {site?.practiceName ?? 'Praxis Lindenhof Physio'}. Alle Rechte vorbehalten.
     </p>
   </Container>
 </footer>

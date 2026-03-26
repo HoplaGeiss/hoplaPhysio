@@ -1,13 +1,13 @@
 {
   "rows": [
-    { "label": "Montag", "hours": "07:30–19:00" },
-    { "label": "Dienstag", "hours": "07:30–19:00" },
-    { "label": "Mittwoch", "hours": "07:30–19:00" },
-    { "label": "Donnerstag", "hours": "07:30–19:00" },
-    { "label": "Freitag", "hours": "07:30–18:00" },
+    { "label": "Montag", "hours": "07:00–19:30" },
+    { "label": "Dienstag", "hours": "07:00–19:30" },
+    { "label": "Mittwoch", "hours": "07:00–19:30" },
+    { "label": "Donnerstag", "hours": "07:00–19:30" },
+    { "label": "Freitag", "hours": "07:00–18:00" },
     { "label": "Samstag", "hours": "geschlossen" },
     { "label": "Sonntag", "hours": "geschlossen" }
   ],
-  "phoneHoursNote": "Telefonisch erreichbar während den Öffnungszeiten (Platzhalter)."
+  "phoneHoursNote": "Telefonisch erreichbar während der Öffnungszeiten."
 }
 

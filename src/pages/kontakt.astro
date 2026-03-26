@@ -16,15 +16,15 @@ const hours = hoursEntry.data;
 ---
 
 <BaseLayout
-  title="Kontakt | Hopla Physio"
-  description="Kontakt, Adresse und Öffnungszeiten der Praxis in der Region Zürich. (Platzhalter)"
+  title="Kontakt | Praxis Lindenhof Physio"
+  description="Kontakt, Adresse und Öffnungszeiten der Praxis Lindenhof Physio in Zürich."
   canonicalPath="/kontakt"
 >
   <Section>
     <Container>
       <h1 class="font-display text-4xl text-slate-950 sm:text-5xl">Kontakt</h1>
       <p class="mt-4 max-w-2xl text-lg text-slate-700">
-        Für Terminwünsche oder Rückfragen kannst du uns telefonisch erreichen oder das Formular nutzen. (Platzhalter)
+        Für Terminwünsche oder Rückfragen erreichst du uns telefonisch oder über das Kontaktformular.
       </p>
     </Container>
   </Section>
@@ -81,23 +81,23 @@ const hours = hoursEntry.data;
               </p>
               <div>
                 <label for="name" class="mb-1 block text-sm font-medium text-slate-800">Name</label>
-                <input id="name" name="name" required class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none ring-sage-700 transition focus:ring-2" />
+                <input id="name" name="name" required class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none ring-emerald-700 transition focus:ring-2" />
               </div>
               <div class="grid gap-4 sm:grid-cols-2">
                 <div>
                   <label for="email" class="mb-1 block text-sm font-medium text-slate-800">E-Mail</label>
-                  <input id="email" name="email" type="email" required class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none ring-sage-700 transition focus:ring-2" />
+                  <input id="email" name="email" type="email" required class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none ring-emerald-700 transition focus:ring-2" />
                 </div>
                 <div>
                   <label for="phone" class="mb-1 block text-sm font-medium text-slate-800">Telefon</label>
-                  <input id="phone" name="phone" class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none ring-sage-700 transition focus:ring-2" />
+                  <input id="phone" name="phone" class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none ring-emerald-700 transition focus:ring-2" />
                 </div>
               </div>
               <div>
                 <label for="message" class="mb-1 block text-sm font-medium text-slate-800">Anliegen</label>
-                <textarea id="message" name="message" rows="5" required class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none ring-sage-700 transition focus:ring-2"></textarea>
+                <textarea id="message" name="message" rows="5" required class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none ring-emerald-700 transition focus:ring-2"></textarea>
               </div>
-              <button type="submit" class="inline-flex items-center justify-center rounded-xl bg-sage-800 px-5 py-3 text-sm font-semibold text-white transition hover:bg-sage-900">
+              <button type="submit" class="inline-flex items-center justify-center rounded-xl bg-emerald-800 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-900">
                 Nachricht senden
               </button>
             </form>
@@ -107,7 +107,7 @@ const hours = hoursEntry.data;
             <div class="aspect-[16/9] overflow-hidden rounded-xl bg-slate-100">
               {site.googleMapsEmbedUrl && site.googleMapsEmbedUrl.includes('google.com/maps/embed') ? (
                 <iframe
-                  title="Standortkarte der Praxis (Platzhalter)"
+                  title="Standortkarte der Praxis Lindenhof Physio"
                   src={site.googleMapsEmbedUrl}
                   width="100%"
                   height="100%"
@@ -116,7 +116,7 @@ const hours = hoursEntry.data;
                 ></iframe>
               ) : (
                 <div class="flex h-full items-center justify-center text-sm text-slate-500">
-                  Google Maps Embed Platzhalter
+                  Praxisstandort
                 </div>
               )}
             </div>

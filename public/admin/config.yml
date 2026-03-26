@@ -1,0 +1,93 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "site"
+    label: "Praxisdaten"
+    files:
+      - label: "Allgemeine Einstellungen"
+        name: "settings"
+        file: "src/content/site/settings.json"
+        fields:
+          - { label: "Praxisname", name: "practiceName", widget: "string" }
+          - { label: "Tagline", name: "tagline", widget: "string" }
+          - { label: "Ort (Kurz)", name: "locationShort", widget: "string" }
+          - { label: "Telefon", name: "phone", widget: "string" }
+          - { label: "E-Mail", name: "email", widget: "string" }
+          - label: "Adresszeilen"
+            name: "addressLines"
+            widget: "list"
+            field: { label: "Zeile", name: "line", widget: "string" }
+          - { label: "PLZ / Ort", name: "postalCodeCity", widget: "string" }
+          - { label: "Kanton", name: "canton", widget: "string" }
+          - label: "Zertifizierungen"
+            name: "certifications"
+            widget: "list"
+            field: { label: "Eintrag", name: "item", widget: "string" }
+          - { label: "Jahre Erfahrung", name: "yearsExperience", widget: "number", min: 0, step: 1 }
+          - { label: "Hinweis Öffnungszeiten", name: "openingHoursNote", widget: "text", required: false }
+          - { label: "Google Maps Embed URL", name: "googleMapsEmbedUrl", widget: "string", required: false }
+
+  - name: "openingHours"
+    label: "Öffnungszeiten"
+    files:
+      - label: "Wöchentliche Zeiten"
+        name: "hours"
+        file: "src/content/openingHours/hours.json"
+        fields:
+          - label: "Zeilen"
+            name: "rows"
+            widget: "list"
+            fields:
+              - { label: "Tag", name: "label", widget: "string" }
+              - { label: "Öffnungszeiten", name: "hours", widget: "string" }
+          - { label: "Telefonhinweis", name: "phoneHoursNote", widget: "string", required: false }
+
+  - name: "services"
+    label: "Leistungen"
+    folder: "src/content/services"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Titel", name: "title", widget: "string" }
+      - { label: "Kurzbeschreibung", name: "summary", widget: "text" }
+      - { label: "Reihenfolge", name: "order", widget: "number", min: 0, step: 1 }
+      - { label: "Hervorgehoben", name: "featured", widget: "boolean", default: true }
+      - { label: "Inhalt", name: "body", widget: "markdown", required: false }
+
+  - name: "team"
+    label: "Team"
+    folder: "src/content/team"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Rolle", name: "role", widget: "string" }
+      - label: "Abschlüsse & Zertifikate"
+        name: "credentials"
+        widget: "list"
+        field: { label: "Eintrag", name: "item", widget: "string" }
+      - label: "Schwerpunkte"
+        name: "specialties"
+        widget: "list"
+        field: { label: "Eintrag", name: "item", widget: "string" }
+      - label: "Bild"
+        name: "image"
+        widget: "object"
+        required: false
+        fields:
+          - { label: "Bildpfad", name: "src", widget: "string" }
+          - { label: "Alt-Text", name: "alt", widget: "string" }
+      - { label: "Reihenfolge", name: "order", widget: "number", min: 0, step: 1 }
+      - { label: "Profiltext", name: "body", widget: "markdown", required: false }
+

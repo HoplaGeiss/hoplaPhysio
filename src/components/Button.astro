@@ -8,10 +8,10 @@ type Props = {
 const { href, variant = 'primary', class: className } = Astro.props;
 
 const base =
-  'inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-sage-700 focus-visible:ring-offset-2 focus-visible:ring-offset-sand-50';
+  'inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-50';
 const variants: Record<typeof variant, string> = {
-  primary: 'bg-sage-800 text-white hover:bg-sage-900 shadow-sm',
-  secondary: 'bg-white text-slate-900 border border-slate-200 hover:bg-sand-50',
+  primary: 'bg-emerald-800 text-white hover:bg-emerald-900 shadow-sm',
+  secondary: 'bg-white text-slate-900 border border-slate-200 hover:bg-stone-50',
 };
 ---
 

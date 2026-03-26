@@ -1,18 +1,22 @@
 ---
 import Container from './Container.astro';
+import { getEntry } from 'astro:content';
 
 const nav = [
   { href: '/leistungen', label: 'Leistungen' },
   { href: '/team', label: 'Team' },
   { href: '/kontakt', label: 'Kontakt' },
 ];
+const siteEntry = await getEntry('site', 'settings');
+const practiceName = siteEntry?.data.practiceName ?? 'Praxis Lindenhof Physio';
+const locationShort = siteEntry?.data.locationShort ?? 'Zürich';
 ---
 
-<header class="sticky top-0 z-40 border-b border-slate-200/70 bg-sand-50/80 backdrop-blur">
+<header class="sticky top-0 z-40 border-b border-slate-200/70 bg-stone-50/80 backdrop-blur">
   <Container class="flex h-16 items-center justify-between">
     <a href="/" class="flex items-baseline gap-2 font-semibold tracking-tight text-slate-950">
-      <span class="font-display text-lg">Hopla Physio</span>
-      <span class="text-sm text-slate-600">Zürich</span>
+      <span class="font-display text-lg">{practiceName}</span>
+      <span class="text-sm text-slate-600">{locationShort}</span>
     </a>
     <nav class="hidden items-center gap-6 text-sm font-medium text-slate-700 sm:flex">
       {nav.map((item) => (
@@ -22,7 +26,7 @@ const nav = [
       ))}
       <a
         href="/kontakt"
-        class="rounded-lg bg-sage-800 px-3 py-2 text-white shadow-sm transition hover:bg-sage-900"
+        class="rounded-lg bg-emerald-800 px-3 py-2 text-white shadow-sm transition hover:bg-emerald-900"
       >
         Termin
       </a>
@@ -30,7 +34,7 @@ const nav = [
     <div class="sm:hidden">
       <a
         href="/kontakt"
-        class="rounded-lg bg-sage-800 px-3 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-sage-900"
+        class="rounded-lg bg-emerald-800 px-3 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-900"
       >
         Termin
       </a>

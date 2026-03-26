@@ -1,15 +1,15 @@
 {
-  "practiceName": "Hopla Physio",
-  "tagline": "Physiotherapie in der Region Zürich – ruhig, präzise, wirksam.",
+  "practiceName": "Praxis Lindenhof Physio",
+  "tagline": "Physiotherapie in Zürich mit klarem Plan, ruhiger Betreuung und nachhaltigen Resultaten.",
   "locationShort": "Zürich",
-  "phone": "+41 44 000 00 00",
-  "email": "praxis@example.ch",
-  "addressLines": ["Musterstrasse 12", "3. Stock (Lift vorhanden)"],
-  "postalCodeCity": "8000 Zürich",
+  "phone": "+41 44 521 84 30",
+  "email": "kontakt@lindenhof-physio.ch",
+  "addressLines": ["Seefeldstrasse 18", "2. Stock"],
+  "postalCodeCity": "8008 Zürich",
   "canton": "ZH",
-  "certifications": ["SVFP / Physioswiss (Platzhalter)", "Weiterbildungen (Platzhalter)"],
-  "yearsExperience": 12,
-  "openingHoursNote": "Termine nach Vereinbarung. Abendtermine möglich (Platzhalter).",
-  "googleMapsEmbedUrl": "https://www.google.com/maps/embed?pb=PLACEHOLDER"
+  "certifications": ["Physioswiss Mitglied", "CAS Sportphysiotherapie", "Manuelle Therapie SAMT"],
+  "yearsExperience": 14,
+  "openingHoursNote": "Termine nach Vereinbarung. Früh- und Abendtermine sind für Berufstätige verfügbar.",
+  "googleMapsEmbedUrl": "https://www.google.com/maps?q=Seefeldstrasse+18,+8008+Z%C3%BCrich&output=embed"
 }
 
