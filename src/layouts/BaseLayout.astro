@@ -1,0 +1,65 @@
+---
+import '../styles/global.css';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import SeoHead from '../components/SeoHead.astro';
+
+type Props = {
+  title: string;
+  description: string;
+  canonicalPath?: string;
+  ogImagePath?: string;
+  noindex?: boolean;
+};
+
+const { title, description, canonicalPath, ogImagePath, noindex } = Astro.props;
+---
+
+<html lang="de-CH" class="h-full scroll-smooth bg-sand-50 text-slate-950 antialiased">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+
+    <SeoHead
+      title={title}
+      description={description}
+      canonicalPath={canonicalPath}
+      ogImagePath={ogImagePath}
+      noindex={noindex}
+    />
+  </head>
+  <body class="min-h-full bg-sand-50">
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:shadow">
+      Zum Inhalt springen
+    </a>
+
+    <SiteHeader />
+    <main id="main">
+      <slot />
+    </main>
+    <SiteFooter />
+
+    <script is:inline>
+      (() => {
+        const els = document.querySelectorAll('[data-reveal]');
+        if (!('IntersectionObserver' in window) || els.length === 0) return;
+        const io = new IntersectionObserver(
+          (entries) => {
+            for (const e of entries) {
+              if (e.isIntersecting) {
+                e.target.classList.add('is-revealed');
+                io.unobserve(e.target);
+              }
+            }
+          },
+          { threshold: 0.12, rootMargin: '0px 0px -10% 0px' },
+        );
+        els.forEach((el) => io.observe(el));
+      })();
+    </script>
+  </body>
+</html>
+

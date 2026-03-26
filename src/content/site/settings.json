@@ -1,0 +1,15 @@
+{
+  "practiceName": "Hopla Physio",
+  "tagline": "Physiotherapie in der Region Zürich – ruhig, präzise, wirksam.",
+  "locationShort": "Zürich",
+  "phone": "+41 44 000 00 00",
+  "email": "praxis@example.ch",
+  "addressLines": ["Musterstrasse 12", "3. Stock (Lift vorhanden)"],
+  "postalCodeCity": "8000 Zürich",
+  "canton": "ZH",
+  "certifications": ["SVFP / Physioswiss (Platzhalter)", "Weiterbildungen (Platzhalter)"],
+  "yearsExperience": 12,
+  "openingHoursNote": "Termine nach Vereinbarung. Abendtermine möglich (Platzhalter).",
+  "googleMapsEmbedUrl": "https://www.google.com/maps/embed?pb=PLACEHOLDER"
+}
+

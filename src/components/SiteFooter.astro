@@ -1,0 +1,42 @@
+---
+import Container from './Container.astro';
+---
+
+<footer class="border-t border-slate-200 bg-sand-50">
+  <Container class="py-10">
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      <div>
+        <p class="font-display text-lg text-slate-950">Hopla Physio</p>
+        <p class="mt-2 text-sm leading-relaxed text-slate-700">
+          Physiotherapie in der Region Zürich. (Platzhalter)
+        </p>
+      </div>
+      <div>
+        <p class="text-sm font-semibold text-slate-950">Navigation</p>
+        <ul class="mt-3 space-y-2 text-sm text-slate-700">
+          <li><a class="hover:text-slate-950" href="/leistungen">Leistungen</a></li>
+          <li><a class="hover:text-slate-950" href="/team">Team</a></li>
+          <li><a class="hover:text-slate-950" href="/kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-sm font-semibold text-slate-950">Kontakt</p>
+        <ul class="mt-3 space-y-2 text-sm text-slate-700">
+          <li>+41 44 000 00 00</li>
+          <li>praxis@example.ch</li>
+          <li>8000 Zürich</li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-sm font-semibold text-slate-950">Hinweis</p>
+        <p class="mt-3 text-sm leading-relaxed text-slate-700">
+          Platzhalter-Website. Rechtstexte (Impressum/Datenschutz) folgen. (Platzhalter)
+        </p>
+      </div>
+    </div>
+    <p class="mt-10 text-xs text-slate-600">
+      © {new Date().getFullYear()} Hopla Physio. Alle Rechte vorbehalten.
+    </p>
+  </Container>
+</footer>
+

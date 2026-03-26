@@ -1,0 +1,22 @@
+---
+type Props = {
+  tone?: 'default' | 'muted';
+  class?: string;
+};
+
+const { tone = 'default', class: className } = Astro.props;
+const toneClass = tone === 'muted' ? 'bg-white/60' : 'bg-transparent';
+---
+
+<section
+  data-reveal
+  class:list={[
+    'py-14 sm:py-16',
+    toneClass,
+    'reveal',
+    className,
+  ]}
+>
+  <slot />
+</section>
+

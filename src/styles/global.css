@@ -1,0 +1,28 @@
+@import "tailwindcss";
+@import "@fontsource/source-serif-4/latin.css";
+@import "@fontsource/source-sans-3/latin.css";
+
+:root {
+  --font-sans: "Source Sans 3", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  --font-display: "Source Serif 4", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+html {
+  font-family: var(--font-sans);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Reveal-on-scroll (subtle, minimal JS) */
+.reveal {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+.reveal.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}

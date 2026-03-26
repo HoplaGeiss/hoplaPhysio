@@ -1,0 +1,40 @@
+---
+import Container from './Container.astro';
+
+const nav = [
+  { href: '/leistungen', label: 'Leistungen' },
+  { href: '/team', label: 'Team' },
+  { href: '/kontakt', label: 'Kontakt' },
+];
+---
+
+<header class="sticky top-0 z-40 border-b border-slate-200/70 bg-sand-50/80 backdrop-blur">
+  <Container class="flex h-16 items-center justify-between">
+    <a href="/" class="flex items-baseline gap-2 font-semibold tracking-tight text-slate-950">
+      <span class="font-display text-lg">Hopla Physio</span>
+      <span class="text-sm text-slate-600">Zürich</span>
+    </a>
+    <nav class="hidden items-center gap-6 text-sm font-medium text-slate-700 sm:flex">
+      {nav.map((item) => (
+        <a class="hover:text-slate-950" href={item.href}>
+          {item.label}
+        </a>
+      ))}
+      <a
+        href="/kontakt"
+        class="rounded-lg bg-sage-800 px-3 py-2 text-white shadow-sm transition hover:bg-sage-900"
+      >
+        Termin
+      </a>
+    </nav>
+    <div class="sm:hidden">
+      <a
+        href="/kontakt"
+        class="rounded-lg bg-sage-800 px-3 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-sage-900"
+      >
+        Termin
+      </a>
+    </div>
+  </Container>
+</header>
+
