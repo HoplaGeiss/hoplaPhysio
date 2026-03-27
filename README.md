@@ -1,5 +1,7 @@
 # Praxis Lindenhof Physio Website
 
+Link: [https://hoplaphysio.netlify.app/](https://hoplaphysio.netlify.app/)
+
 Production-ready static website for a fictional physiotherapy clinic in Zurich, built with Astro, Tailwind CSS, and Decap CMS, deployable on Netlify.
 
 ## Stack
